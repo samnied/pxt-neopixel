@@ -29,5 +29,6 @@
         }
     },
     "public": true,
-    "preferredEditor": "tsprj"
+    "preferredEditor": "tsprj",
+    "installedVersion": "workspace:be081354-c16f-45ee-6e24-b85ffa4a5903"
 }
