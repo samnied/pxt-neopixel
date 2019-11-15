@@ -177,7 +177,7 @@ namespace neopixel {
 
         setMatrixColor_x_y(x: number, y: number, rgb: number) {
             let i = 0;
-            if (y % 2) {
+            if (!(y % 2)) {
                 i = ((y + 1) * 16) - x - 1;
             }
             else {
