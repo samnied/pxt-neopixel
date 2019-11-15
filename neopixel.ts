@@ -120,9 +120,14 @@ namespace neopixel {
             _length: number; // number of LEDs
             _mode: NeoPixelMode;
             _matrixWidth: number; // number of leds in a matrix - if any
+/*
+            //% blockId="neopixel_set_matrix" block="Matrix block %strip %c_0"
+           
+            setMatrix(c_0: number): void {
+            }
 
-
-            //% blockId=setMatrix block="Matrix %strip %c_0|%c_1|%c_2|%c_3|%c_4|%c_5|%c_6|%c_7" group=patterns
+*/
+            //% blockId="neopixel_set_matrix" block="Matrix %strip %c_0|%c_1|%c_2|%c_3|%c_4|%c_5|%c_6|%c_7" weight=100
             //% c_0.shadow=color_for_led
             //% c_1.shadow=color_for_led
             //% c_2.shadow=color_for_led
@@ -131,7 +136,7 @@ namespace neopixel {
             //% c_5.shadow=color_for_led
             //% c_6.shadow=color_for_led
             //% c_7.shadow=color_for_led
-            setMatrix(strip: Strip, c_0: ColorPattern, c_1: ColorPattern, c_2: ColorPattern, c_3: ColorPattern, c_4: ColorPattern, c_5: ColorPattern, c_6: ColorPattern, c_7: ColorPattern): void {
+            setMatrix(c_0: ColorPattern, c_1: ColorPattern, c_2: ColorPattern, c_3: ColorPattern, c_4: ColorPattern, c_5: ColorPattern, c_6: ColorPattern, c_7: ColorPattern): void {
             this.setPixelColor(0, c_0.getColors()[0]);
             this.setPixelColor(1, c_0.getColors()[1]);
             this.setPixelColor(2, c_0.getColors()[2]);
