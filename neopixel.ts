@@ -67,6 +67,7 @@ namespace neopixel {
             this.show();
         }
 
+        
         /**
          * Shows a rainbow pattern on all LEDs. 
          * @param startHue the start hue value for the rainbow, eg: 1
@@ -462,6 +463,89 @@ namespace neopixel {
             let buf = this.buf;
             buf[pixeloffset + 3] = white;
         }
+    }
+
+    //
+    
+    /**
+	 * To be used as a shadow color picker block containing a custom array
+     */
+    //% blockId=brightColorNumberPicker block="%value"
+    //% shim=TD_ID colorSecondary="#FFFFFF"
+    //% value.fieldEditor="colornumber" value.fieldOptions.decompileLiterals=true
+    //% value.defl='#ff0000' group=colors weight=150
+    //% value.fieldOptions.colours='["#ffffff","#ff0000","#ffaa00","#ffdc00","#ffff00","#eaff00","#8eff00","#4df243","#42b87f","#00ffdc","#00dcff","#00a3ff","#0087ff","#acb3f3","#e0acfe","#a300ff","#ea00ff","#ff00e3","#fdd3f8","#f1d07e","#a8b5f5","#C3C6D8","#727474", "#f3f2da", "#000000"]'
+    //% value.fieldOptions.columns=5 value.fieldOptions.className='rgbColorPicker' 
+    export function __colorNumberPicker(value: number) {
+        return value;
+    }
+
+    // Create a class to hold variable length lists of colors. This also helps to keep color lists
+    // from being used as function arguments to code blocks that shouldn't accept them
+    export class ColorPattern {
+        _colorList: Array<number>;
+
+        constructor(val: Array<number>) {
+            this._colorList = val.slice(0);
+        }
+
+        getColors(): Array<number> {
+            return this._colorList;
+        }
+
+        // fills a Buffer with the pattern
+        fillBufferWithPattern(buf: Buffer, stride: number = 3): void {
+            let len = buf.length() / stride;
+            let index = 0;
+            for (let i = 0; i < len; i++) {
+                let rgb = this._colorList[index];
+                buf[i * stride] = (rgb >> 16) & 0XFF;
+                buf[i * stride + 1] = (rgb >> 8) & 0XFF;
+                buf[i * stride + 2] = rgb & 0XFF;
+                index = index + 1;
+                if (index >= this._colorList.length()) {
+                    index = 0;
+                }
+            }
+        }
+    }
+
+    /**
+     * Returns list of 12 color choices for the LEDs
+     * @param ledval1 eg:0xff0000
+     * @param ledval2 eg:0xFF7F00
+     * @param ledval3 eg:0xFFFE00
+     * @param ledval4 eg:0x7FFF00
+     * @param ledval5 eg:0x00FF00
+     * @param ledval6 eg:0x00FF7F
+     * @param ledval7 eg:0x00FFFE
+     * @param ledval8 eg:0x007FFF
+     * @param ledval9 eg:0x0000FF
+     * @param ledval10 eg:0x7F00FF
+     * @param ledval11 eg:0xFE00FF
+     * @param ledval12 eg:0xFF007F
+     */
+    //% blockId="color_for_led" block="$ledval1|$ledval2|$ledval3|$ledval4|$ledval5|$ledval6|$ledval7|$ledval8"
+    //% weight=100
+    //% ledval1.shadow="brightColorNumberPicker"
+    //% ledval2.shadow="brightColorNumberPicker"
+    //% ledval3.shadow="brightColorNumberPicker"
+    //% ledval4.shadow="brightColorNumberPicker"
+    //% ledval5.shadow="brightColorNumberPicker"
+    //% ledval6.shadow="brightColorNumberPicker"
+    //% ledval7.shadow="brightColorNumberPicker"
+    //% ledval8.shadow="brightColorNumberPicker"
+    //% ledval1.defl='#000000'
+    //% ledval2.defl='#000000'
+    //% ledval3.defl='#000000'
+    //% ledval4.defl='#000000'
+    //% ledval5.defl='#000000'
+    //% ledval6.defl='#000000'
+    //% ledval7.defl='#000000'
+    //% ledval8.defl='#000000'
+    //% inlineInputMode=inline group=patterns
+    export function colorForLed(ledval1: number, ledval2: number, ledval3: number, ledval4: number, ledval5: number, ledval6: number, ledval7: number, ledval8: number): ColorPattern {
+        return new ColorPattern([ledval1, ledval2, ledval3, ledval4, ledval5, ledval6, ledval7, ledval8]);
     }
 
     /**
