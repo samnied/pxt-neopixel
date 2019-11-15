@@ -465,7 +465,7 @@ namespace neopixel {
         }
     }
 
-    //
+    // Matrix
     
     /**
 	 * To be used as a shadow color picker block containing a custom array
@@ -543,9 +543,29 @@ namespace neopixel {
     //% ledval6.defl='#000000'
     //% ledval7.defl='#000000'
     //% ledval8.defl='#000000'
-    //% inlineInputMode=inline group=patterns
+    //% inlineInputMode=inline group=colors
     export function colorForLed(ledval1: number, ledval2: number, ledval3: number, ledval4: number, ledval5: number, ledval6: number, ledval7: number, ledval8: number): ColorPattern {
         return new ColorPattern([ledval1, ledval2, ledval3, ledval4, ledval5, ledval6, ledval7, ledval8]);
+    }
+
+    //% blockId=setMatrix block="Matrix %strip %c_0|%c_1|%c_2|%c_3|%c_4|%c_5|%c_6|%c_7" group=patterns
+    //% c_0.shadow=color_for_led
+    //% c_1.shadow=color_for_led
+    //% c_2.shadow=color_for_led
+    //% c_3.shadow=color_for_led
+    //% c_4.shadow=color_for_led
+    //% c_5.shadow=color_for_led
+    //% c_6.shadow=color_for_led
+    //% c_7.shadow=color_for_led
+    export function setMatrix(strip: Strip, c_0: ColorPattern, c_1: ColorPattern, c_2: ColorPattern, c_3: ColorPattern, c_4: ColorPattern, c_5: ColorPattern, c_6: ColorPattern, c_7: ColorPattern): void {
+        strip.setPixelColor(0, c_0.getColors()[0]);
+        strip.setPixelColor(1, c_0.getColors()[1]);
+        strip.setPixelColor(2, c_0.getColors()[2]);
+        strip.setPixelColor(3, c_0.getColors()[3]);
+        strip.setPixelColor(4, c_0.getColors()[4]);
+        strip.setPixelColor(5, c_0.getColors()[5]);
+        strip.setPixelColor(6, c_0.getColors()[6]);
+        strip.setPixelColor(7, c_0.getColors()[7]);
     }
 
     /**
