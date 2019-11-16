@@ -235,10 +235,7 @@ namespace neopixel {
             this.show();
         }
 
-        setMatrixColor_enlarge(xPos: number, yPos: number, rgb: number, scaleFactor: number) {
-            if (scaleFactor == 0) {
-                scaleFactor = 1
-            }
+        setMatrixColor_enlarge(xPos: number, yPos: number, rgb: number, scaleFactor: number = 1) {
             for (let x = 0; x < scaleFactor; x++) {
                 for (let y = 0; y < scaleFactor; y++) {
                     this.setMatrixColor_x_y(xPos * scaleFactor + x, yPos * scaleFactor + y, rgb)
@@ -257,12 +254,15 @@ namespace neopixel {
         //% image.defl=null
         //% group=matrix
         setImage(image: Image, row: number, col: number, rgb: number, scaleFactor: number): void {
-            for (let x = 0; x < image.width(); x++) {
-                for (let y = 0; y < image.height(); y++) {
-                    if (image.pixel(x, y)) {
-                        //this.setMatrixColor(x, y, NeoPixelColors.Red)
-                        //this.setMatrixColor_enlarge(x + row, y + col, RGB, scaleFactor)
-                        this.setMatrixColor_enlarge(x + row, y + col, rgb, scaleFactor)
+            if(image != null)
+            {
+                for (let x = 0; x < image.width(); x++) {
+                    for (let y = 0; y < image.height(); y++) {
+                        if (image.pixel(x, y)) {
+                            //this.setMatrixColor(x, y, NeoPixelColors.Red)
+                            //this.setMatrixColor_enlarge(x + row, y + col, RGB, scaleFactor)
+                            this.setMatrixColor_enlarge(x + row, y + col, rgb, scaleFactor)
+                        }
                     }
                 }
             }
