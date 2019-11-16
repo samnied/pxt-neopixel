@@ -152,7 +152,7 @@ namespace neopixel {
         _matrixWidth: number; // number of leds in a matrix - if any
 
         //% blockId="neopixel_set_matrix_color"
-        //% block="Set Matrix %strip X: $x Y: $y Color: $rgb"
+        //% block="%strip Set Matrix X: $x Y: $y Color: $rgb"
         //% rgb.shadow="brightColorNumberPicker"
         //% x.min=0 x.max=15
         //% y.min=0 y.max=15
@@ -167,7 +167,7 @@ namespace neopixel {
             }
             this.setPixelColor(i, rgb);
         }
-        //% blockId="neopixel_set_matrix_8" block="Matrix %strip %c_0|%c_1|%c_2|%c_3|%c_4|%c_5|%c_6|%c_7" 
+        //% blockId="neopixel_set_matrix_8" block="Matrix %strip %c_0|%c_1|%c_2|%c_3|%c_4|%c_5|%c_6|%c_7"
         //% group=matrix weight=80
         //% c_0.shadow=color_for_led_8
         //% c_1.shadow=color_for_led_8
@@ -225,7 +225,7 @@ namespace neopixel {
 
         //% blockId="neopixel_clear_matrix"
         //% group=matrix weight=90
-        //% block="Clear Matrix %strip"
+        //% block="%strip Clear Matrix"
         clearMatrix():void{
             for (let y = 0; y < 16; y++) {
                 for (let x = 0; x < 16; x++) {
@@ -235,6 +235,38 @@ namespace neopixel {
             this.show();
         }
 
+        setMatrixColor_enlarge(xPos: number, yPos: number, rgb: number, scaleFactor: number) {
+            if (scaleFactor == 0) {
+                scaleFactor = 1
+            }
+            for (let x = 0; x < scaleFactor; x++) {
+                for (let y = 0; y < scaleFactor; y++) {
+                    this.setMatrixColor_x_y(xPos * scaleFactor + x, yPos * scaleFactor + y, rgb)
+                }
+            }
+        }
+
+        //% blockId=neopixel_set_image
+        //% block="%strip display image %image| at x %row| y %col| in %rgb | with scale factor %scaleFactor"
+        //% inlineInputMode=inline
+        //% rgb.shadow=brightColorNumberPicker
+        //% col.min=0 col.max=15
+        //% row.min=0 row.max=15
+        //% scaleFactor.defl=1
+        //% scaleFactor.min=1 scaleFactor.max=3
+        //% image.defl=null
+        //% group=matrix
+        setImage(image: Image, row: number, col: number, rgb: number, scaleFactor: number): void {
+            for (let x = 0; x < image.width(); x++) {
+                for (let y = 0; y < image.height(); y++) {
+                    if (image.pixel(x, y)) {
+                        //this.setMatrixColor(x, y, NeoPixelColors.Red)
+                        //this.setMatrixColor_enlarge(x + row, y + col, RGB, scaleFactor)
+                        this.setMatrixColor_enlarge(x + row, y + col, rgb, scaleFactor)
+                    }
+                }
+            }
+        }
         /**
          * Shows all LEDs to a given color (range 0-255 for r, g, b). 
          * @param rgb RGB color of the LED
