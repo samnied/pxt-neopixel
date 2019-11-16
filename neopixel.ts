@@ -39,7 +39,7 @@ enum NeoPixelMode {
 /**
  * Functions to operate NeoPixel strips.
  */
-//% weight=5 color=#2699BF icon="\uf110"
+//% weight=5 color=#2699BF icon="\uf110" groups=["init", "colors", "basic", "matrix"]
 namespace neopixel {
     // Matrix sam
 
@@ -72,94 +72,70 @@ namespace neopixel {
 
     /**
      * Returns list of 8 color choices for the LEDs
-     * @param ledval1 eg:0xff0000
-     * @param ledval2 eg:0xFF7F00
-     * @param ledval3 eg:0xFFFE00
-     * @param ledval4 eg:0x7FFF00
-     * @param ledval5 eg:0x00FF00
-     * @param ledval6 eg:0x00FF7F
-     * @param ledval7 eg:0x00FFFE
-     * @param ledval8 eg:0x007FFF
-     */
-    //% blockId="color_for_led_8" block="$ledval1|$ledval2|$ledval3|$ledval4|$ledval5|$ledval6|$ledval7|$ledval8"
-    //% weight=100
-    //% ledval1.shadow="brightColorNumberPicker"
-    //% ledval2.shadow="brightColorNumberPicker"
-    //% ledval3.shadow="brightColorNumberPicker"
-    //% ledval4.shadow="brightColorNumberPicker"
-    //% ledval5.shadow="brightColorNumberPicker"
-    //% ledval6.shadow="brightColorNumberPicker"
-    //% ledval7.shadow="brightColorNumberPicker"
-    //% ledval8.shadow="brightColorNumberPicker"
-    //% ledval1.defl='#000000'
-    //% ledval2.defl='#000000'
-    //% ledval3.defl='#000000'
-    //% ledval4.defl='#000000'
-    //% ledval5.defl='#000000'
-    //% ledval6.defl='#000000'
-    //% ledval7.defl='#000000'
-    //% ledval8.defl='#000000'
-    //% inlineInputMode=inline group=colors
-    export function colorForLed_8(ledval1: number, ledval2: number, ledval3: number, ledval4: number, ledval5: number, ledval6: number, ledval7: number, ledval8: number): ColorPattern {
-        return new ColorPattern([ledval1, ledval2, ledval3, ledval4, ledval5, ledval6, ledval7, ledval8]);
+    */
+    //% blockId="color_for_led_8" block="$c_1|$c_2|$c_3|$c_4|$c_5|$c_6|$c_7|$c_8"
+    //% weight=100 group=colors
+    //% c_1.shadow="brightColorNumberPicker"
+    //% c_2.shadow="brightColorNumberPicker"
+    //% c_3.shadow="brightColorNumberPicker"
+    //% c_4.shadow="brightColorNumberPicker"
+    //% c_5.shadow="brightColorNumberPicker"
+    //% c_6.shadow="brightColorNumberPicker"
+    //% c_7.shadow="brightColorNumberPicker"
+    //% c_8.shadow="brightColorNumberPicker"
+    //% c_1.defl='#000000'
+    //% c_2.defl='#000000'
+    //% c_3.defl='#000000'
+    //% c_4.defl='#000000'
+    //% c_5.defl='#000000'
+    //% c_6.defl='#000000'
+    //% c_7.defl='#000000'
+    //% c_8.defl='#000000'
+    //% inlineInputMode=inline
+    export function colorForLed_8(c_1: number, c_2: number, c_3: number, c_4: number, c_5: number, c_6: number, c_7: number, c_8: number): ColorPattern {
+        return new ColorPattern([c_1, c_2, c_3, c_4, c_5, c_6, c_7, c_8]);
     }
 
     /**
      * Returns list of 16 color choices for the LEDs
-     * @param ledval1 eg:0xff0000
-     * @param ledval2 eg:0xFF7F00
-     * @param ledval3 eg:0xFFFE00
-     * @param ledval4 eg:0x7FFF00
-     * @param ledval5 eg:0x00FF00
-     * @param ledval6 eg:0x00FF7F
-     * @param ledval7 eg:0x00FFFE
-     * @param ledval8 eg:0x007FFF
-     * @param ledval9 eg:0x007FFF
-     * @param ledval10 eg:0x007FFF
-     * @param ledval11 eg:0x007FFF
-     * @param ledval12 eg:0x007FFF
-     * @param ledval13 eg:0x007FFF
-     * @param ledval14 eg:0x007FFF
-     * @param ledval15 eg:0x007FFF
-     * @param ledval16 eg:0x007FFF
      */
-    //% blockId="color_for_led_16" block="$ledval1|$ledval2|$ledval3|$ledval4|$ledval5|$ledval6|$ledval7|$ledval8$ledval9$ledval10$ledval11$ledval12$ledval13$ledval14$ledval15$ledval16"
-    //% weight=100
-    //% ledval1.shadow="brightColorNumberPicker"
-    //% ledval2.shadow="brightColorNumberPicker"
-    //% ledval3.shadow="brightColorNumberPicker"
-    //% ledval4.shadow="brightColorNumberPicker"
-    //% ledval5.shadow="brightColorNumberPicker"
-    //% ledval6.shadow="brightColorNumberPicker"
-    //% ledval7.shadow="brightColorNumberPicker"
-    //% ledval8.shadow="brightColorNumberPicker"
-    //% ledval9.shadow="brightColorNumberPicker"
-    //% ledval10.shadow="brightColorNumberPicker"
-    //% ledval11.shadow="brightColorNumberPicker"
-    //% ledval12.shadow="brightColorNumberPicker"
-    //% ledval13.shadow="brightColorNumberPicker"
-    //% ledval14.shadow="brightColorNumberPicker"
-    //% ledval15.shadow="brightColorNumberPicker"
-    //% ledval16.shadow="brightColorNumberPicker"
-    //% ledval1.defl='#000000'
-    //% ledval2.defl='#000000'
-    //% ledval3.defl='#000000'
-    //% ledval4.defl='#000000'
-    //% ledval5.defl='#000000'
-    //% ledval6.defl='#000000'
-    //% ledval7.defl='#000000'
-    //% ledval8.defl='#000000'
-    //% ledval9.defl='#000000'
-    //% ledval10.defl='#000000'
-    //% ledval11.defl='#000000'
-    //% ledval12.defl='#000000'
-    //% ledval13.defl='#000000'
-    //% ledval14.defl='#000000'
-    //% ledval15.defl='#000000'
-    //% ledval16.defl='#000000'
-    //% inlineInputMode=inline group=colors
-    export function colorForLed_16(ledval1: number, ledval2: number, ledval3: number, ledval4: number, ledval5: number, ledval6: number, ledval7: number, ledval8: number, ledval9: number, ledval10: number, ledval11: number, ledval12: number, ledval13: number, ledval14: number, ledval15: number, ledval16: number): ColorPattern {
-        return new ColorPattern([ledval1, ledval2, ledval3, ledval4, ledval5, ledval6, ledval7, ledval8, ledval9, ledval10, ledval11, ledval12, ledval13, ledval14, ledval15, ledval16]);
+    //% blockId="color_for_led_16" block="$c_1|$c_2|$c_3|$c_4|$c_5|$c_6|$c_7|$c_8$c_9$c_10$c_11$c_12$c_13$c_14$c_15$c_16"
+    //% weight=100 group=colors
+    //% c_1.shadow="brightColorNumberPicker"
+    //% c_2.shadow="brightColorNumberPicker"
+    //% c_3.shadow="brightColorNumberPicker"
+    //% c_4.shadow="brightColorNumberPicker"
+    //% c_5.shadow="brightColorNumberPicker"
+    //% c_6.shadow="brightColorNumberPicker"
+    //% c_7.shadow="brightColorNumberPicker"
+    //% c_8.shadow="brightColorNumberPicker"
+    //% c_9.shadow="brightColorNumberPicker"
+    //% c_10.shadow="brightColorNumberPicker"
+    //% c_11.shadow="brightColorNumberPicker"
+    //% c_12.shadow="brightColorNumberPicker"
+    //% c_13.shadow="brightColorNumberPicker"
+    //% c_14.shadow="brightColorNumberPicker"
+    //% c_15.shadow="brightColorNumberPicker"
+    //% c_16.shadow="brightColorNumberPicker"
+    //% c_1.defl='#000000'
+    //% c_2.defl='#000000'
+    //% c_3.defl='#000000'
+    //% c_4.defl='#000000'
+    //% c_5.defl='#000000'
+    //% c_6.defl='#000000'
+    //% c_7.defl='#000000'
+    //% c_8.defl='#000000'
+    //% c_9.defl='#000000'
+    //% c_10.defl='#000000'
+    //% c_11.defl='#000000'
+    //% c_12.defl='#000000'
+    //% c_13.defl='#000000'
+    //% c_14.defl='#000000'
+    //% c_15.defl='#000000'
+    //% c_16.defl='#000000'
+    //% inlineInputMode=inline 
+    export function colorForLed_16(c_1: number, c_2: number, c_3: number, c_4: number, c_5: number, c_6: number, c_7: number, c_8: number, c_9: number, c_10: number, c_11: number, c_12: number, c_13: number, c_14: number, c_15: number, c_16: number): ColorPattern {
+        return new ColorPattern([c_1, c_2, c_3, c_4, c_5, c_6, c_7, c_8, c_9, c_10, c_11, c_12, c_13, c_14, c_15, c_16]);
     }
 
     /**
@@ -175,6 +151,12 @@ namespace neopixel {
         _mode: NeoPixelMode;
         _matrixWidth: number; // number of leds in a matrix - if any
 
+        //% blockId="neopixel_set_matrix_color"
+        //% block="Set Matrix %strip X: $x Y: $y Color: $rgb"
+        //% rgb.shadow="brightColorNumberPicker"
+        //% x.min=0 x.max=15
+        //% y.min=0 y.max=15
+        //% group=matrix weight=90
         setMatrixColor_x_y(x: number, y: number, rgb: number) {
             let i = 0;
             if (!(y % 2)) {
@@ -185,7 +167,8 @@ namespace neopixel {
             }
             this.setPixelColor(i, rgb);
         }
-        //% blockId="neopixel_set_matrix_8" block="Matrix %strip %c_0|%c_1|%c_2|%c_3|%c_4|%c_5|%c_6|%c_7" weight=100
+        //% blockId="neopixel_set_matrix_8" block="Matrix %strip %c_0|%c_1|%c_2|%c_3|%c_4|%c_5|%c_6|%c_7" 
+        //% group=matrix weight=80
         //% c_0.shadow=color_for_led_8
         //% c_1.shadow=color_for_led_8
         //% c_2.shadow=color_for_led_8
@@ -212,6 +195,7 @@ namespace neopixel {
         }
 
         //% blockId="neopixel_set_matrix_16" block="Matrix %strip %c_0|%c_1|%c_2|%c_3|%c_4|%c_5|%c_6|%c_7|%c_8|%c_9|%c_10|%c_11|%c_12|%c_13|%c_14|%c_15" weight=100
+        //% group=matrix weight=70
         //% c_0.shadow=color_for_led_16
         //% c_1.shadow=color_for_led_16
         //% c_2.shadow=color_for_led_16
@@ -234,6 +218,18 @@ namespace neopixel {
             for (let y = 0; y < 16; y++){
                 for (let x = 0; x < 16; x++) {
                     this.setMatrixColor_x_y(x, y, color[y].getColors()[x])
+                }
+            }
+            this.show();
+        }
+
+        //% blockId="neopixel_clear_matrix"
+        //% group=matrix weight=90
+        //% block="Clear Matrix %strip"
+        clearMatrix():void{
+            for (let y = 0; y < 16; y++) {
+                for (let x = 0; x < 16; x++) {
+                    this.setMatrixColor_x_y(x, y, 0x000000)
                 }
             }
             this.show();
@@ -364,8 +360,9 @@ namespace neopixel {
          */
         //% blockId="neopixel_set_pixel_color" block="%strip|set pixel color at %pixeloffset|to %rgb=neopixel_colors" 
         //% blockGap=8
-        //% weight=80
-        //% parts="neopixel" advanced=true
+        //% weight=100
+        //% group=basic
+        //% parts="neopixel" 
         setPixelColor(pixeloffset: number, rgb: number): void {
             this.setPixelRGB(pixeloffset >> 0, rgb >> 0);
         }
@@ -422,7 +419,7 @@ namespace neopixel {
          * Send all the changes to the strip.
          */
         //% blockId="neopixel_show" block="%strip|show" blockGap=8
-        //% weight=79
+        //% weight=79 group=basic
         //% parts="neopixel"
         show() {
             ws2812b.sendBuffer(this.buf, this.pin);
@@ -455,7 +452,7 @@ namespace neopixel {
          */
         //% blockId="neopixel_set_brightness" block="%strip|set brightness %brightness" blockGap=8
         //% weight=59
-        //% parts="neopixel" advanced=true
+        //% parts="neopixel" group=basic
         setBrightness(brightness: number): void {
             this.brightness = brightness & 0xff;
         }
@@ -660,6 +657,7 @@ namespace neopixel {
     //% parts="neopixel"
     //% trackArgs=0,2
     //% blockSetVariable=strip
+    //% group=init
     export function create(pin: DigitalPin, numleds: number, mode: NeoPixelMode): Strip {
         let strip = new Strip();
         let stride = mode === NeoPixelMode.RGBW ? 4 : 3;
