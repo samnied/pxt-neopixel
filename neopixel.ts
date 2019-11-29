@@ -158,14 +158,17 @@ namespace neopixel {
         //% y.min=0 y.max=15
         //% group=matrix weight=90
         setMatrixColor_x_y(x: number, y: number, rgb: number) {
-            let i = 0;
-            if (!(y % 2)) {
-                i = ((y + 1) * 16) - x - 1;
+            if((x >= 0 && x <= 15) && (y >= 0 && y <= 15))
+            {
+                let i = 0;
+                if (!(y % 2)) {
+                    i = ((y + 1) * 16) - x - 1;
+                }
+                else {
+                    i = (y * 16) + x;
+                }
+                this.setPixelColor(i, rgb);
             }
-            else {
-                i = (y * 16) + x;
-            }
-            this.setPixelColor(i, rgb);
         }
         //% blockId="neopixel_set_matrix_8" block="Matrix %strip %c_0|%c_1|%c_2|%c_3|%c_4|%c_5|%c_6|%c_7"
         //% group=matrix weight=80
