@@ -50,7 +50,7 @@ namespace neopixel {
     //% shim=TD_ID colorSecondary="#FFFFFF"
     //% value.fieldEditor="colornumber" value.fieldOptions.decompileLiterals=true
     //% value.defl='#ff0000' group=colors weight=120
-    //% value.fieldOptions.colours='["#ffffff","#ff0000","#ffa500","#ffff00","#00ff00","#0000ff","#4b0082","#8a2be2","#ff00ff","#000000"]'
+    //% value.fieldOptions.colours='["#ffffff","#ff0000","#ffa500","#ffff00","#00ff00","#0000ff","#00ffff","#ff00ff","#8a2be2","#000000"]'
     //% value.fieldOptions.columns=5 value.fieldOptions.className='rgbColorPicker' 
     export function __colorNumberPicker(value: number) {
         return value;
@@ -158,8 +158,7 @@ namespace neopixel {
         //% y.min=0 y.max=15
         //% group=matrix weight=90
         setMatrixColor_x_y(x: number, y: number, rgb: number) {
-            if((x >= 0 && x <= 15) && (y >= 0 && y <= 15))
-            {
+            if ((x >= 0 && x <= 15) && (y >= 0 && y <= 15)) {
                 let i = 0;
                 if (!(y % 2)) {
                     i = ((y + 1) * 16) - x - 1;
@@ -183,11 +182,9 @@ namespace neopixel {
         setMatrix_8(c_0: ColorPattern, c_1: ColorPattern, c_2: ColorPattern, c_3: ColorPattern, c_4: ColorPattern, c_5: ColorPattern, c_6: ColorPattern, c_7: ColorPattern): void {
             let color = [c_0, c_1, c_2, c_3, c_4, c_5, c_6, c_7]
 
-            for (let y = 0; y < 8; y++)
-            {
-                
-                for (let x = 0; x < 8; x++)
-                {
+            for (let y = 0; y < 8; y++) {
+
+                for (let x = 0; x < 8; x++) {
                     this.setMatrixColor_x_y(x * 2, y * 2, color[y].getColors()[x])
                     this.setMatrixColor_x_y(x * 2 + 1, y * 2, color[y].getColors()[x])
                     this.setMatrixColor_x_y(x * 2, y * 2 + 1, color[y].getColors()[x])
@@ -217,8 +214,8 @@ namespace neopixel {
         //% c_15.shadow=color_for_led_16
         setMatrix_16(c_0: ColorPattern, c_1: ColorPattern, c_2: ColorPattern, c_3: ColorPattern, c_4: ColorPattern, c_5: ColorPattern, c_6: ColorPattern, c_7: ColorPattern, c_8: ColorPattern, c_9: ColorPattern, c_10: ColorPattern, c_11: ColorPattern, c_12: ColorPattern, c_13: ColorPattern, c_14: ColorPattern, c_15: ColorPattern): void {
             let color = [c_0, c_1, c_2, c_3, c_4, c_5, c_6, c_7, c_8, c_9, c_10, c_11, c_12, c_13, c_14, c_15]
-            
-            for (let y = 0; y < 16; y++){
+
+            for (let y = 0; y < 16; y++) {
                 for (let x = 0; x < 16; x++) {
                     this.setMatrixColor_x_y(x, y, color[y].getColors()[x])
                 }
@@ -229,7 +226,7 @@ namespace neopixel {
         //% blockId="neopixel_clear_matrix"
         //% group=matrix weight=90
         //% block="%strip Clear Matrix"
-        clearMatrix():void{
+        clearMatrix(): void {
             for (let y = 0; y < 16; y++) {
                 for (let x = 0; x < 16; x++) {
                     this.setMatrixColor_x_y(x, y, 0x000000)
@@ -257,8 +254,7 @@ namespace neopixel {
         //% image.defl=null
         //% group=matrix
         setImage(image: Image, row: number, col: number, rgb: number, scaleFactor: number): void {
-            if(image != null)
-            {
+            if (image != null) {
                 for (let x = 0; x < image.width(); x++) {
                     for (let y = 0; y < image.height(); y++) {
                         if (image.pixel(x, y)) {
