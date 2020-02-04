@@ -50,7 +50,7 @@ namespace neopixel {
     //% shim=TD_ID colorSecondary="#FFFFFF"
     //% value.fieldEditor="colornumber" value.fieldOptions.decompileLiterals=true
     //% value.defl='#ff0000' group=colors weight=120
-    //% value.fieldOptions.colours='["#ffffff","#ff0000","#ffaa00","#ffdc00","#ffff00","#eaff00","#8eff00","#4df243","#42b87f","#00ffdc","#00dcff","#00a3ff","#0087ff","#acb3f3","#e0acfe","#a300ff","#ea00ff","#ff00e3","#fdd3f8","#f1d07e","#a8b5f5","#C3C6D8","#727474", "#f3f2da", "#000000"]'
+    //% value.fieldOptions.colours='["#FFFFF","#FF0000","#FFA500","#FFFF00","#00FF00","#0000FF","#4B0082","#8A2BE2","#FF00FF","#000000"]'
     //% value.fieldOptions.columns=5 value.fieldOptions.className='rgbColorPicker' 
     export function __colorNumberPicker(value: number) {
         return value;
