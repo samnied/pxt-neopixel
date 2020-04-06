@@ -254,8 +254,8 @@ namespace neopixel {
         //% blockId="neopixel_show_text"
         //% group=matrix weight=90
         //% block="%strip show Text $str Line: $line $color"
-        //% color.shadow="brightColorNumberPicker"
         //% line.min = 0 line.max = 1
+        //% color.shadow="brightColorNumberPicker"
         showText(str: string, color: number, line: number = 0) {
             this.clear()
             let yPos = 7 * line
