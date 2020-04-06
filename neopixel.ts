@@ -256,7 +256,7 @@ namespace neopixel {
         //% group=matrix weight=80
         //% block="%strip show Text $str $color" Line: $line
         //% color.shadow="brightColorNumberPicker"
-        //% line.min = 0 line.max = 1 val.defl = 0
+        //% line.min = 0 line.max = 1
         showText(str: string, color: number, line: number = 0) {
             this.clear()
 
@@ -265,7 +265,7 @@ namespace neopixel {
                 // first char does not need any space
                 this.showChar(str.charAt(0), 0 - pos, 0, color, false)
                 for (let char = 1; char < str.length; char++) {
-                    this.showChar(str.charAt(char), char * 5 + 1 - pos, 0, color, false)
+                    this.showChar(str.charAt(char), char * 5 + 1 - pos, line*7, color, false)
                 }
                 this.show()
                 basic.pause(250)

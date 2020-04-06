@@ -13,7 +13,7 @@
     )
     */
     //strip.showChar("A", 0, 0, 0xfff000)
-    strip.showText("HALLO Welt", 0xff0000)
+    strip.showText("HALLO Welt", 0xff0000, 1)
     //strip.show()
     /*
         strip.showRainbow();
