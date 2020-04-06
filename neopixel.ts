@@ -23,7 +23,6 @@ enum NeoPixelColors {
     //% block=black
     Black = 0x000000
 }
-
 /**
  * Different modes for RGB or RGB+W NeoPixel strips
  */
