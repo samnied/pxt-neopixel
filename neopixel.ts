@@ -238,9 +238,8 @@ namespace neopixel {
 
         //% blockId="neopixel_show_char"
         //% group=matrix weight=90
-        //% block="%strip show character"
+        //% block="%strip show character xPos: $xOffset yPos: $yOffset Color: $color"
         //% color.shadow = "brightColorNumberPicker"
-        //% color.defl='#000000'
         showChar(str: string, xOffset: number, yOffset: number, color: number, show: boolean = true) {
             let offset = (str.charCodeAt(0) - 33) * 5
             for (let y = 0; y < 5; y++) {
@@ -248,9 +247,7 @@ namespace neopixel {
                     if (this.font[offset + y] & (1 << x)) {
                         let xPos = 4 - x + xOffset
                         let yPos = y + yOffset
-                        if ((xPos >= 0) && (xPos <= 15) && (yPos >= 0) && (yPos <= 15)) {
-                            this.setMatrixColor_x_y(xPos, yPos, color)
-                        }
+                        this.setMatrixColor_x_y(xPos, yPos, color)
                     }
                 }
             }
@@ -259,10 +256,9 @@ namespace neopixel {
             }
         }
         //% blockId="neopixel_show_text"
-        //% group=matrix weight=90
+        //% group=matrix weight=80
         //% block="%strip show Text $str $color"
-        //% color.shadow = "brightColorNumberPicker"
-        //% color.defl='#000000'
+        //% color.shadow="brightColorNumberPicker"
         showText(str: string, color: number) {
             this.clear()
 
