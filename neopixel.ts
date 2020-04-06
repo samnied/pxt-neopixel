@@ -237,9 +237,6 @@ namespace neopixel {
         }
 
         //% blockId="neopixel_show_char"
-        //% group=matrix weight=90
-        //% block="%strip show character xPos: $xOffset yPos: $yOffset Color: $color"
-        //% color.shadow = "brightColorNumberPicker"
         showChar(str: string, xOffset: number, yOffset: number, color: number, show: boolean = true) {
             let offset = (str.charCodeAt(0) - 33) * 5
             for (let y = 0; y < 5; y++) {
@@ -257,9 +254,10 @@ namespace neopixel {
         }
         //% blockId="neopixel_show_text"
         //% group=matrix weight=80
-        //% block="%strip show Text $str $color"
+        //% block="%strip show Text $str $color" Line: $line
         //% color.shadow="brightColorNumberPicker"
-        showText(str: string, color: number) {
+        //% line.min = 0 line.max = 1 val.defl = 0
+        showText(str: string, color: number, line: number = 0) {
             this.clear()
 
             let len = str.length * 5 + str.length - 1
