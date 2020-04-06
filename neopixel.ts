@@ -253,7 +253,7 @@ namespace neopixel {
         }
         //% blockId="neopixel_show_text"
         //% group=matrix weight=90
-        //% block="%strip show Text $str $color" Line: $line
+        //% block="%strip show Text $str Line: $line $color"
         //% line.min=0 line.max=1
         //% color.shadow="brightColorNumberPicker"
         showText(str: string, color: number, line: number = 0) {
