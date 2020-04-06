@@ -1,5 +1,6 @@
 {
     let strip = neopixel.create(DigitalPin.P0, 256, NeoPixelMode.RGB)
+    /*
     strip.setMatrix_8(
         neopixel.colorForLed_8(0xff0000, 0x000000, 0x000000, 0x000000, 0x000000, 0x000000, 0x000000, 0xff0000),
         neopixel.colorForLed_8(0x000000, 0x000000, 0x000000, 0x000000, 0x000000, 0x000000, 0x000000, 0x000000),
@@ -10,7 +11,10 @@
         neopixel.colorForLed_8(0x000000, 0x000000, 0x000000, 0x000000, 0x000000, 0x000000, 0x000000, 0x000000),
         neopixel.colorForLed_8(0x000000, 0x000000, 0x000000, 0x000000, 0x000000, 0x000000, 0x000000, 0x000000)
     )
-
+    */
+    //strip.showChar("A", 0, 0, 0xfff000)
+    strip.showText("HALLO Welt", 0xff0000)
+    //strip.show()
     /*
         strip.showRainbow();
         for (let i = 0; i <= strip.length(); i++) { 
