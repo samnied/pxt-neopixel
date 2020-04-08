@@ -40,6 +40,7 @@ enum NeoPixelMode {
  */
 //% weight=5 color=#2699BF icon="\uf110" groups=["init", "colors", "basic", "matrix"]
 namespace neopixel {
+    
     // Matrix sam
 
     /**
