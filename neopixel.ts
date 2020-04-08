@@ -312,7 +312,7 @@ namespace neopixel {
          * @param rgb RGB color of the LED
          */
         //% blockId="neopixel_set_strip_color" block="%strip|show color %rgb=neopixel_colors" 
-        //% weight=85 blockGap=8
+        //% weight=85
         //% parts="neopixel"
         showColor(rgb: number) {
             rgb = rgb >> 0;
@@ -431,7 +431,6 @@ namespace neopixel {
          * @param rgb RGB color of the LED
          */
         //% blockId="neopixel_set_pixel_color" block="%strip|set pixel color at %pixeloffset|to %rgb=neopixel_colors" 
-        //% blockGap=8
         //% weight=79
         //% group="basic"
         //% parts="neopixel" 
@@ -490,7 +489,7 @@ namespace neopixel {
         /** 
          * Send all the changes to the strip.
          */
-        //% blockId="neopixel_show" block="%strip|show" blockGap=8
+        //% blockId="neopixel_show" block="%strip|show" 
         //% weight=78 group=basic
         //% parts="neopixel"
         show() {
@@ -522,7 +521,7 @@ namespace neopixel {
          * Set the brightness of the strip. This flag only applies to future operation.
          * @param brightness a measure of LED brightness in 0-255. eg: 255
          */
-        //% blockId="neopixel_set_brightness" block="%strip|set brightness %brightness" blockGap=8
+        //% blockId="neopixel_set_brightness" block="%strip|set brightness %brightness" 
         //% weight=70 group=basic
         //% parts="neopixel" 
         setBrightness(brightness: number): void {
@@ -725,7 +724,6 @@ namespace neopixel {
      * @param numleds number of leds in the strip, eg: 24,30,60,64
      */
     //% blockId="neopixel_create" block="NeoPixel at pin %pin|with %numleds|leds as %mode"
-    //% blockGap=8
     //% parts="neopixel"
     //% trackArgs=0,2
     //% blockSetVariable=strip
