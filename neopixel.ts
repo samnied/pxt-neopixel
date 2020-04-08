@@ -169,62 +169,10 @@ namespace neopixel {
                 this.setPixelColor(i, rgb);
             }
         }
- /*
-        //% blockId="neopixel_set_matrix_8" block="Matrix %strip %c_0|%c_1|%c_2|%c_3|%c_4|%c_5|%c_6|%c_7"
-        //% group=matrix weight=80
-        //% c_0.shadow=color_for_led_8
-        //% c_1.shadow=color_for_led_8
-        //% c_2.shadow=color_for_led_8
-        //% c_3.shadow=color_for_led_8
-        //% c_4.shadow=color_for_led_8
-        //% c_5.shadow=color_for_led_8
-        //% c_6.shadow=color_for_led_8
-        //% c_7.shadow=color_for_led_8
-        setMatrix_8(c_0: ColorPattern, c_1: ColorPattern, c_2: ColorPattern, c_3: ColorPattern, c_4: ColorPattern, c_5: ColorPattern, c_6: ColorPattern, c_7: ColorPattern): void {
-            let color = [c_0, c_1, c_2, c_3, c_4, c_5, c_6, c_7]
-
-            for (let y = 0; y < 8; y++) {
-
-                for (let x = 0; x < 8; x++) {
-                    this.setMatrixColor_x_y(x * 2, y * 2, color[y].getColors()[x])
-                    this.setMatrixColor_x_y(x * 2 + 1, y * 2, color[y].getColors()[x])
-                    this.setMatrixColor_x_y(x * 2, y * 2 + 1, color[y].getColors()[x])
-                    this.setMatrixColor_x_y(x * 2 + 1, y * 2 + 1, color[y].getColors()[x])
-                }
-            }
-            this.show();
-        }
- */
-/*
-        //% blockId="neopixel_set_matrix_16" block="Matrix %strip %c_0|%c_1|%c_2|%c_3|%c_4|%c_5|%c_6|%c_7|%c_8|%c_9|%c_10|%c_11|%c_12|%c_13|%c_14|%c_15" weight=100
-        //% group=matrix weight=70
-        //% c_0.shadow=color_for_led_16
-        //% c_1.shadow=color_for_led_16
-        //% c_2.shadow=color_for_led_16
-        //% c_3.shadow=color_for_led_16
-        //% c_4.shadow=color_for_led_16
-        //% c_5.shadow=color_for_led_16
-        //% c_6.shadow=color_for_led_16
-        //% c_7.shadow=color_for_led_16
-        //% c_8.shadow=color_for_led_16
-        //% c_9.shadow=color_for_led_16
-        //% c_10.shadow=color_for_led_16
-        //% c_11.shadow=color_for_led_16
-        //% c_12.shadow=color_for_led_16
-        //% c_13.shadow=color_for_led_16
-        //% c_14.shadow=color_for_led_16
-        //% c_15.shadow=color_for_led_16
-        setMatrix_16(c_0: ColorPattern, c_1: ColorPattern, c_2: ColorPattern, c_3: ColorPattern, c_4: ColorPattern, c_5: ColorPattern, c_6: ColorPattern, c_7: ColorPattern, c_8: ColorPattern, c_9: ColorPattern, c_10: ColorPattern, c_11: ColorPattern, c_12: ColorPattern, c_13: ColorPattern, c_14: ColorPattern, c_15: ColorPattern): void {
-            let color = [c_0, c_1, c_2, c_3, c_4, c_5, c_6, c_7, c_8, c_9, c_10, c_11, c_12, c_13, c_14, c_15]
-
-            for (let y = 0; y < 16; y++) {
-                for (let x = 0; x < 16; x++) {
-                    this.setMatrixColor_x_y(x, y, color[y].getColors()[x])
-                }
-            }
-            this.show();
-        }
-*/
+ // TODO
+        
+        
+        
         //% blockId="neopixel_clear_matrix"
         //% group=matrix weight=90
         //% block="%strip Clear Matrix"
