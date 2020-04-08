@@ -49,7 +49,7 @@ namespace neopixel {
     //% blockId=brightColorNumberPicker block="%value"
     //% shim=TD_ID colorSecondary="#FFFFFF"
     //% value.fieldEditor="colornumber" value.fieldOptions.decompileLiterals=true
-    //% value.defl='#ff0000' group=colors weight=120
+    //% value.defl='#ff0000' group="colors" weight=89
     //% value.fieldOptions.colours='["#000000","#ff0000","#ffa500","#ffff00","#00ff00","#0000ff","#00ffff","#ff00ff","#8a2be2","#ffffff"]'
     //% value.fieldOptions.columns=5 value.fieldOptions.className='rgbColorPicker' 
     export function __colorNumberPicker(value: number) {
@@ -74,7 +74,7 @@ namespace neopixel {
      * Returns list of 8 color choices for the LEDs
     */
     //% blockId="color_for_led_8" block="$c_1|$c_2|$c_3|$c_4|$c_5|$c_6|$c_7|$c_8"
-    //% weight=100 group=colors
+    //% weight=88 group="colors"
     //% c_1.shadow="brightColorNumberPicker"
     //% c_2.shadow="brightColorNumberPicker"
     //% c_3.shadow="brightColorNumberPicker"
@@ -100,7 +100,7 @@ namespace neopixel {
      * Returns list of 16 color choices for the LEDs
      */
     //% blockId="color_for_led_16" block="$c_1|$c_2|$c_3|$c_4|$c_5|$c_6|$c_7|$c_8$c_9$c_10$c_11$c_12$c_13$c_14$c_15$c_16"
-    //% weight=100 group=colors
+    //% weight=87 group="colors"
     //% c_1.shadow="brightColorNumberPicker"
     //% c_2.shadow="brightColorNumberPicker"
     //% c_3.shadow="brightColorNumberPicker"
@@ -157,7 +157,7 @@ namespace neopixel {
         //% rgb.shadow="brightColorNumberPicker"
         //% x.min=0 x.max=15
         //% y.min=0 y.max=15
-        //% group=matrix weight=90
+        //% group="matrix" weight=60
         setMatrixColor_x_y(x: number, y: number, rgb: number) {
             if ((x >= 0 && x <= 15) && (y >= 0 && y <= 15)) {
                 let i = 0;
@@ -172,7 +172,7 @@ namespace neopixel {
         }
 
         //% blockId="neopixel_set_matrix_8" block="Matrix %strip %c_0|%c_1|%c_2|%c_3|%c_4|%c_5|%c_6|%c_7"
-        //% group=matrix weight=80
+        //% group="matrix" weight=68
         //% c_0.shadow=color_for_led_8
         //% c_1.shadow=color_for_led_8
         //% c_2.shadow=color_for_led_8
@@ -197,7 +197,7 @@ namespace neopixel {
         }
 
         //% blockId="neopixel_set_matrix_16" block="Matrix %strip %c_0|%c_1|%c_2|%c_3|%c_4|%c_5|%c_6|%c_7|%c_8|%c_9|%c_10|%c_11|%c_12|%c_13|%c_14|%c_15" weight=100
-        //% group=matrix weight=70
+        //% group="matrix" weight=67
         //% c_0.shadow=color_for_led_16
         //% c_1.shadow=color_for_led_16
         //% c_2.shadow=color_for_led_16
@@ -227,7 +227,7 @@ namespace neopixel {
       
         
         //% blockId="neopixel_clear_matrix"
-        //% group=matrix weight=90
+        //% group=matrix weight=69
         //% block="%strip Clear Matrix"
         clearMatrix(): void {
             for (let y = 0; y < 16; y++) {
@@ -255,7 +255,7 @@ namespace neopixel {
             }
         }
         //% blockId="neopixel_show_text"
-        //% group=matrix weight=90
+        //% group="matrix" weight=67
         //% block="%strip show Text $str Line: $line $color"
         //% line.min=0 line.max=1
         //% color.shadow="brightColorNumberPicker"
@@ -432,8 +432,8 @@ namespace neopixel {
          */
         //% blockId="neopixel_set_pixel_color" block="%strip|set pixel color at %pixeloffset|to %rgb=neopixel_colors" 
         //% blockGap=8
-        //% weight=100
-        //% group=basic
+        //% weight=79
+        //% group="basic"
         //% parts="neopixel" 
         setPixelColor(pixeloffset: number, rgb: number): void {
             this.setPixelRGB(pixeloffset >> 0, rgb >> 0);
@@ -491,7 +491,7 @@ namespace neopixel {
          * Send all the changes to the strip.
          */
         //% blockId="neopixel_show" block="%strip|show" blockGap=8
-        //% weight=79 group=basic
+        //% weight=78 group=basic
         //% parts="neopixel"
         show() {
             ws2812b.sendBuffer(this.buf, this.pin);
@@ -523,8 +523,8 @@ namespace neopixel {
          * @param brightness a measure of LED brightness in 0-255. eg: 255
          */
         //% blockId="neopixel_set_brightness" block="%strip|set brightness %brightness" blockGap=8
-        //% weight=59
-        //% parts="neopixel" group=basic
+        //% weight=70 group=basic
+        //% parts="neopixel" 
         setBrightness(brightness: number): void {
             this.brightness = brightness & 0xff;
         }
@@ -725,11 +725,11 @@ namespace neopixel {
      * @param numleds number of leds in the strip, eg: 24,30,60,64
      */
     //% blockId="neopixel_create" block="NeoPixel at pin %pin|with %numleds|leds as %mode"
-    //% weight=160 blockGap=8
+    //% blockGap=8
     //% parts="neopixel"
     //% trackArgs=0,2
     //% blockSetVariable=strip
-    //% group=init
+    //% group="init" weight=90
     export function create(pin: DigitalPin, numleds: number, mode: NeoPixelMode): Strip {
         let strip = new Strip();
         let stride = mode === NeoPixelMode.RGBW ? 4 : 3;
