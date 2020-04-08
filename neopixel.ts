@@ -38,7 +38,7 @@ enum NeoPixelMode {
 /**
  * Functions to operate NeoPixel strips.
  */
-//% weight=5 color=#2699BF icon="\uf110" groups=["init", "colors", "basic", "matrix"]
+//% weight=5 color=#2699BF icon="\uf110" groups=["init", "colors", "basic", "matrix", "others"]
 namespace neopixel {
     
     // Matrix sam
