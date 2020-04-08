@@ -169,6 +169,7 @@ namespace neopixel {
                 this.setPixelColor(i, rgb);
             }
         }
+ /*
         //% blockId="neopixel_set_matrix_8" block="Matrix %strip %c_0|%c_1|%c_2|%c_3|%c_4|%c_5|%c_6|%c_7"
         //% group=matrix weight=80
         //% c_0.shadow=color_for_led_8
@@ -193,7 +194,8 @@ namespace neopixel {
             }
             this.show();
         }
-
+ */
+/*
         //% blockId="neopixel_set_matrix_16" block="Matrix %strip %c_0|%c_1|%c_2|%c_3|%c_4|%c_5|%c_6|%c_7|%c_8|%c_9|%c_10|%c_11|%c_12|%c_13|%c_14|%c_15" weight=100
         //% group=matrix weight=70
         //% c_0.shadow=color_for_led_16
@@ -222,7 +224,7 @@ namespace neopixel {
             }
             this.show();
         }
-
+*/
         //% blockId="neopixel_clear_matrix"
         //% group=matrix weight=90
         //% block="%strip Clear Matrix"
