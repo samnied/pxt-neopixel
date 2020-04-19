@@ -259,7 +259,8 @@ namespace neopixel {
         //% block="%strip show Text $str Line: $line $color"
         //% line.min=0 line.max=1
         //% color.shadow="brightColorNumberPicker"
-        showText(str: string, color: number, line: number = 0) {
+        showText(strMsg: string, color: number, line: number = 0) {
+            let str = "  " + strMsg
             this.clear()
             let yPos = 7 * line
             let len = str.length * 5 + str.length - 1
