@@ -1,3 +1,4 @@
+
 /**
  * Well known colors for a NeoPixel strip
  */
@@ -285,7 +286,7 @@ namespace neopixel {
         }
         //% blockId="neopixel_show_text"
         //% group="matrix" weight=67
-        //% block="%strip show Text $str Line: $line $color"
+        //% block="%strip show Text %strMsg %color Line: %line"
         //% line.min=0 line.max=1
         //% color.shadow="brightColorNumberPicker"
         showText(strMsg: string, color: number, line: number = 0) {
